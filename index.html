@@ -5,9 +5,14 @@
 </head>
 <body>
 <script>
-Hyperpublic.person(2, sup);
+
+var hyperpublic = new Hyperpublic('3RiGGtdIlJbVZhlqUvdGg47mwSegIYYHkfsWi0IT', 'IGqb1qcJfnkZJ839lR70PlI0rnP59SjG6BdOtmqI');
+
+hyperpublic.people.show('4', 'sup');
+hyperpublic.people.find({ "location" : "11211" }, 'sup');
 
 function sup(data) {
+  console.log('it works');
   console.log(data);
 }
 
