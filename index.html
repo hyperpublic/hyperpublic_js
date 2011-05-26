@@ -1,21 +1,52 @@
 <!doctype html>
 <html>
-<head>
-<script src="hyperpublic.js"></script>
-</head>
-<body>
-<script>
+  <head>
+  <meta charset="utf-8">
+  <title>Hyperpublic Javacsript Library Demo</title>
+  <style>
+    /* html5doctor.com Reset Stylesheet v1.6.1 by Rich Clark */
+   html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;} body{line-height:1;} article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} nav ul{list-style:none;} blockquote,q{quotes:none;} blockquote:before,blockquote:after,q:before,q:after{content:none;} a{font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;} ins{background-color:#ff9;color:#000;text-decoration:none;} mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;} del{text-decoration:line-through;} abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help;} table{border-collapse:collapse;border-spacing:0;} hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0;} input,select{vertical-align:middle;}
+/* end reset */
 
-var hyperpublic = new Hyperpublic('3RiGGtdIlJbVZhlqUvdGg47mwSegIYYHkfsWi0IT', 'IGqb1qcJfnkZJ839lR70PlI0rnP59SjG6BdOtmqI');
+    body { font-family: sans-serif }
+    article { border: 3px solid blue; width: 500px; border-radius: 6px; border: thin solid #cfcfcf; background: #efefef; margin: 0 auto 20px; }    
+    img { margin: 0 auto; display: block; border:3px solid white; border-radius:3px; }    
+    h1 { font-size: 16px; }
+    header { border-bottom: thin solid #dfdfdf;  margin: 40px }
+    h1.display_name { margin: 10px 0 10px 60px; text-shadow: 1px 1px 0px white; color: #222 }
+    #tag_list { margin: 10px 0 10px 60px; }
+    span { margin: 0 4px}
+  </style>
+  <script src="hyperpublic.js"></script>
+  <script>
+    // sorry bout the fout
+    
+    var hyperpublic = new Hyperpublic('YOUR API KEY', 'YOUR API SECRET KEY');
 
-hyperpublic.people.show('4', 'sup');
-hyperpublic.people.find({ "location" : "11211" }, 'sup');
+    hyperpublic.people.show('4', 'demo');
+    hyperpublic.places.show(200, 'demo');
+    hyperpublic.things.show(420, 'demo');
 
-function sup(data) {
-  console.log('it works');
-  console.log(data);
-}
-
-</script>
-</body>
+    demo = function (data) {
+    console.log(data);
+        var obj = document.createElement('article');
+        var ourHTML = "<h1 class='display_name'>" + data.display_name + " - " + data.locations[0].name + "</h1>";
+        ourHTML += "<img src='"+ data.images[0].src_large +"'/>";
+        ourHTML += "<div id='tag_list'>";
+        for (i = 0; i <= 2; i++) {
+            ourHTML += "<span>"+ data.tags[i] +"</span>";
+        }
+        ourHTML += "</div>";
+        obj.innerHTML = ourHTML;
+        var footer = document.getElementsByTagName("footer");
+        document.body.insertBefore(obj, footer);
+    }
+  </script>
+  </head>
+  <body>
+    <header>
+    <h1>Demo - Using the Hyperpublic API with Javascript</h1>
+    </header>
+    <footer></footer>
+  </body>
 </html>
