@@ -34,7 +34,7 @@ Hyperpublic = function (clientKey, clientSecret) {
             var url = [endpoint, 'people'];
             api(url, callback, params);
         },
-        show: function (params, callback) {
+        show: function (id, callback) {
             var url = [endpoint, 'things', id];
             api(url, callback);
         }
@@ -53,12 +53,16 @@ Hyperpublic = function (clientKey, clientSecret) {
         query.callback = callback;
 
         for (key in query) {
-            queryString.push([key, encodeURIComponent(query[key])].join('='));
+            if (query.hasOwnProperty(key)) {
+                queryString.push([key, encodeURIComponent(query[key])].join('='));                
+            }
         }
 
-        if (arguments.length === 3 ) {
+        if (arguments.length === 3) {
             for (key in params) {
-                queryString.push([key, encodeURIComponent(params[key])].join('='));
+                if (params.hasOwnProperty(key)) {
+                    queryString.push([key, encodeURIComponent(params[key])].join('='));
+                }
             }
         }
 
