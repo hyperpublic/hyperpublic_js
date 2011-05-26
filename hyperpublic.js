@@ -1,6 +1,6 @@
 Hyperpublic = function (clientKey, clientSecret) {
     if (!clientKey || !clientSecret) {
-        throw new Error('api keys, bro');
+        throw new Error("API keys are requried. If you don't have keys yet, visit http://hyperpublic.com/oauth_clients");
     } // just checkin...
     
     var clientkey = clientKey,
@@ -38,6 +38,8 @@ Hyperpublic = function (clientKey, clientSecret) {
             api(url, callback);
         }
     }
+
+
 
     api = function (url, callback, params) {
 
