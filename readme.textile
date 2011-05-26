@@ -1,0 +1,3 @@
+h1. Hyperpublic Javascript Library
+
+p. Instructions coming soon! Check out the demo for now, pretty easy to understand whats going on there.
