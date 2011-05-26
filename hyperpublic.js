@@ -15,7 +15,7 @@ Hyperpublic = function (clientKey, clientSecret) {
         show: function (id, callback) {
             var url = [endpoint, 'people', id];
             api(url, callback);
-        },
+        }
     };
 
     this.places = {
@@ -27,7 +27,8 @@ Hyperpublic = function (clientKey, clientSecret) {
             var url = [endpoint, 'places', id];
             api(url, callback);
         }
-    }
+    };
+
     this.things = {
         find: function (params,callback) {        
             var url = [endpoint, 'people'];
@@ -37,9 +38,7 @@ Hyperpublic = function (clientKey, clientSecret) {
             var url = [endpoint, 'things', id];
             api(url, callback);
         }
-    }
-
-
+    };
 
     api = function (url, callback, params) {
 
@@ -65,12 +64,12 @@ Hyperpublic = function (clientKey, clientSecret) {
 
         url = url + '?' + queryString.join('&');
         inject(url);
-    }
+    };
 
     inject = function (url) {
         var tag = document.createElement('script');
         tag.type = 'text/javascript';
         tag.src = url;
         document.getElementsByTagName('head')[0].appendChild(tag);
-    }
-}
+    };
+};
