@@ -12,7 +12,7 @@ p. Create the Hyperpublic object by declaring something like
 var foo = new Hyperpublic('your_api_key', 'your_api_secret');
 </pre>
 
-h3. Intertacting with the Hyperpublic API
+h3. Interacting with the Hyperpublic API
 
 p. Now you can query against the Hyperpublic API. Each query takes two arguments. The first argument is the query itself while the second argument is the name of the callback function that you have specfied (if you're not familiar with JSONP, "start here":http://en.wikipedia.org/wiki/JSONP).
 
@@ -32,7 +32,7 @@ p. Similarly, you could query for a place by ID with @Hyperpublic.place(416, 'ca
 
 h4. Search for People, Places, or Things
 
-p. Its very easy to search the Hyperpublic by sending a series of paramaters to the API. If I wanted to find 2 developers in Chelsea, I would issue a query like this:
+p. It's very easy to search the Hyperpublic by sending a series of paramaters to the API. If I wanted to find 2 developers in Chelsea, I would issue a query like this:
 
 <pre>
 Hyperpublic.people({ "neighborhood" : "chelsea,ny", "tags": "developer", "limit": "2"}, 'callback');
