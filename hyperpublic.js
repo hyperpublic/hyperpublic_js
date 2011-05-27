@@ -3,12 +3,12 @@ Hyperpublic = function (clientKey, clientSecret) {
         throw new Error("API keys are requried. If you don't have keys yet, visit http://hyperpublic.com/oauth_clients");
     } // just checkin...
     
-    var clientkey = clientKey,
-        clientSecret = clientSecret,
-        endpoint = 'https://api.hyperpublic.com/api/v1';
+    var endpoint = 'https://api.hyperpublic.com/api/v1',
+        api, 
+        inject;
     
     this.people = {
-        find: function (params,callback) {
+        find: function (params, callback) {
             var url = [endpoint, 'people'];
             api(url, callback, params);
         },
@@ -19,7 +19,7 @@ Hyperpublic = function (clientKey, clientSecret) {
     };
 
     this.places = {
-        find: function (params ,callback) {        
+        find: function (params, callback) {        
             var url = [endpoint, 'people'];
             api(url, callback, params);
         },
@@ -30,7 +30,7 @@ Hyperpublic = function (clientKey, clientSecret) {
     };
 
     this.things = {
-        find: function (params,callback) {        
+        find: function (params, callback) {        
             var url = [endpoint, 'people'];
             api(url, callback, params);
         },
