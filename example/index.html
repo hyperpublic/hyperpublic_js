@@ -17,15 +17,21 @@
     #tag_list { margin: 10px 0 10px 60px; }
     span { margin: 0 4px}
   </style>
-  <script src="hyperpublic.js"></script>
+  <script src="../lib/hyperpublic.js"></script>
   <script>
     // sorry bout the fout
     
-    var hyperpublic = new Hyperpublic('YOUR API KEY', 'YOUR API SECRET KEY');
+    var hyperpublic = new Hyperpublic('3RiGGtdIlJbVZhlqUvdGg47mwSegIYYHkfsWi0IT', 'IGqb1qcJfnkZJ839lR70PlI0rnP59SjG6BdOtmqI');
 
     hyperpublic.people.show('4', 'demo');
     hyperpublic.places.show(200, 'demo');
     hyperpublic.things.show(420, 'demo');
+
+    hyperpublic.places.find({"postal_code": "11211", "limit":"2"},'log');
+
+    log = function(data) {
+        console.log(data);
+    }
 
     demo = function (data) {
     console.log(data);
