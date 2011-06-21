@@ -20,7 +20,7 @@ Hyperpublic = function (clientKey, clientSecret) {
 
     this.places = {
         find: function (params, callback) {        
-            var url = [endpoint, 'people'];
+            var url = [endpoint, 'places'];
             api(url, callback, params);
         },
         show: function (id, callback) {
@@ -31,7 +31,7 @@ Hyperpublic = function (clientKey, clientSecret) {
 
     this.things = {
         find: function (params, callback) {        
-            var url = [endpoint, 'people'];
+            var url = [endpoint, 'things'];
             api(url, callback, params);
         },
         show: function (id, callback) {
