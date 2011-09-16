@@ -2,7 +2,13 @@ h1. Hyperpublic Javascript Library
 
 h3. Using the Javascript Library
 
-p. Include @hyperpublic.js@ in your scripts directory. Now you have the ability to create @Hyperpublic@ Javascript objects.
+p. Include the hyperpublic.js file hosted from Hyperpublic...
+
+<pre>
+<script type="text/javascript" src="http://hyperpublic.com/javascripts/hyperpublic.js"></script>
+</pre>
+
+p. or include @hyperpublic.js@ from this repo in your scripts directory. Now you have the ability to create @Hyperpublic@ Javascript objects.
 
 h3. Creating the Hyperpublic Object
 
