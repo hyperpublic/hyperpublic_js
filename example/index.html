@@ -27,7 +27,7 @@
     hyperpublic.places.show(200, 'demo');
     hyperpublic.things.show(420, 'demo');
 
-    hyperpublic.places.find({"postal_code": "11211", "limit":"2"},'log');
+    hyperpublic.places.find({"location": "11211", "limit":"2"},'log');
 
     log = function(data) {
         console.log(data);
