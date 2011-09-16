@@ -17,7 +17,7 @@ h3. Interacting with the Hyperpublic API
 p. Now you can query against the Hyperpublic API. Each query takes two arguments. The first argument is the query itself while the second argument is the name of the callback function that you have specfied (if you're not familiar with JSONP, "start here":http://en.wikipedia.org/wiki/JSONP).
 
 <pre>
-Hyperpublic.people(your_query, your_callback);
+Hyperpublic.places.find(your_query, your_callback);
 </pre>
 
 h4. Show a Person, Place, or Thing by ID
@@ -25,17 +25,17 @@ h4. Show a Person, Place, or Thing by ID
 p. A simple query for a person who has the id '4' would look something like the call below. This call also triggers a function called 'callback'.
 
 <pre>
-Hyperpubic.people(4, 'callback');
+Hyperpubic.places.show(4, 'callback');
 </pre>
 
 p. Similarly, you could query for a place by ID with @Hyperpublic.place(416, 'callback')@ or a person with @Hyperpublic.thing(212, 'callback)@.
 
 h4. Search for People, Places, or Things
 
-p. It's very easy to search the Hyperpublic by sending a series of paramaters to the API. If I wanted to find 2 developers in Chelsea, I would issue a query like this:
+p. It's very easy to search the Hyperpublic by sending a series of paramaters to the API. If I wanted to find 2 pizza places in New York, NY 10014, I would issue a query like this:
 
 <pre>
-Hyperpublic.people({ "neighborhood" : "chelsea,ny", "tags": "developer", "limit": "2"}, 'callback');
+Hyperpublic.places.find({ "location" : "New York, NY 10014", "q":"pizza", "limit": "2"}, 'callback');
 </pre>
 
 p. The Hyperpublic API would then return a JSON object which represtents the data available in the callback function.
