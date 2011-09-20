@@ -34,7 +34,7 @@ p. A simple query for a person who has the id '4' would look something like the 
 client.places.show(4, 'callback');
 </pre>
 
-p. Similarly, you could query for a place by ID with @Hyperpublic.place(416, 'callback')@ or a person with @Hyperpublic.thing(212, 'callback)@.
+p. Similarly, you could query for a person by ID with @client.people.show(416, 'callback')@ or a thing with @client.thing.show(212, 'callback)@.
 
 h4. Search for People, Places, or Things
 
